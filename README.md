@@ -100,7 +100,7 @@ file: db.json
   "stories": [
     {
       "id": 1,
-      "name": "bruce_fe",
+      "name": "alex",
       "avatar": "/images/avatars/a1.png"
     },
     {
@@ -145,7 +145,7 @@ file: db.json
     },
     {
       "id": 10,
-      "name": "bruce_fe",
+      "name": "alex",
       "avatar": "/images/avatars/a10.png"
     }
   ]
