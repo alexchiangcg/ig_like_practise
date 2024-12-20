@@ -6,6 +6,18 @@ type IGStory = {
     avatar: string;
 };
 
+type IGPost = {
+    id: number;
+    location: string;
+    account: string;
+    avatar: string;
+    photo: string;
+    likes: number;
+    description: string;
+    hashTags: string;
+    createTime: string;
+};
+
 
 export const homeApi = createApi({
     reducerPath: "homeApi",
@@ -19,8 +31,16 @@ export const homeApi = createApi({
                 return "stories";
             },
         }),
+        getIGPosts: builder.query<IGPost[], number | "all">({
+            query: (id) => {
+                if (id !== "all") {
+                    return `posts/${id}`;
+                }
+                return "posts";
+            },
+        }),
     }),
 });
 
-export const { useGetIGStoiesQuery } = homeApi;
+export const { useGetIGStoiesQuery, useGetIGPostsQuery } = homeApi;
 export const homeApiReducer = homeApi.reducer
