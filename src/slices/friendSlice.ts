@@ -92,12 +92,8 @@ type Friend = {
     initialState,
     reducers: {
       follow: (state, action: PayloadAction<number>) => {
-        const friends = state.friends;
-        for (const friend of friends) {
-          if (friend.id === action.payload) {
-            friend.isFollowing = true;
-          }
-        }
+        const friend = state.friends.find(f => f.id === action.payload);
+        if (friend) friend.isFollowing = true;
       },
       unFollow: (state, action: PayloadAction<number>) => {
         const friends = state.friends;
